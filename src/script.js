@@ -1,1 +1,0 @@
-basecamp-gmail.safariextension/script.js
