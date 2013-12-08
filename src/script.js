@@ -1,5 +1,5 @@
 var interval = setInterval(function() {
-  if (!document.querySelectorAll('.nH').length) return;
+  if (!document.querySelectorAll('.nH').length) return
   clearInterval(interval)
   window.addEventListener('hashchange', function(){
     var links = document.querySelectorAll('[href^="https://basecamp.com/"]')
@@ -10,7 +10,14 @@ var interval = setInterval(function() {
     a.target = '_blank'
     a.href = href
     a.appendChild(document.createTextNode('Visit this on Basecamp'))
-    window.idled = true
     document.querySelector('.iH > div').appendChild(a)
   })
 }, 100)
+
+document.addEventListener('keypress', function(event){
+  var link
+  if (event.target.className.match(/editable/)) return
+  if (event.shiftKey && event.keyCode == 66 && (link = document.querySelector('.basecamp-link'))) {
+    link.dispatchEvent(new CustomEvent('click', true, true))
+  }
+})
