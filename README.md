@@ -2,8 +2,6 @@
 
 by [@travisjeffery](http://twitter.com/travisjeffery)
 
-Adds 'Visit this on Basecamp' link to your Gmail.
+Add a prominent 'Visit this on Basecamp' button to your Gmail, or press shift-b to visit the discussion.
 
 ![demo](https://raw.github.com/travisjeffery/basecamp-gmail/master/readme/screenshot.png)
-
-More functionality later...
