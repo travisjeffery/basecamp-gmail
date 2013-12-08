@@ -1,13 +1,24 @@
 window.addEventListener('hashchange', function(){
-  var links = document.querySelectorAll('[href^="https://basecamp.com/"]')
-  if (!links.length) return
+  var link = document.querySelector('.basecamp-link')
+  if (document.querySelector('span.hP').textContent.match(/Daily Recap/)) {
+    if (!link) return
+    link.style.display = 'none'
+  }
+  else {
+    var links = document.querySelectorAll('[href^="https://basecamp.com/"]')
+    if (!links.length) return
     var href = links[0].href
-  , a = document.createElement('a')
-  a.className = 'basecamp-link T-I J-J5-Ji lS T-I-ax7 ar7'
-  a.target = '_blank'
-  a.href = href
-  a.appendChild(document.createTextNode('Visit this on Basecamp'))
-  document.querySelector('.iH > div').appendChild(a)
+    if (!link) {
+      link = document.createElement('a')
+      link.className = 'basecamp-link T-I J-J5-Ji lS T-I-ax7 ar7'
+      link.target = '_blank'
+      link.href = href
+      link.appendChild(document.createTextNode('Visit this on Basecamp'))
+      document.querySelector('.iH > div').appendChild(link)
+    }
+    link.style.display = ''
+    link.href = href
+  }
 })
 
 document.addEventListener('keypress', function(event){
