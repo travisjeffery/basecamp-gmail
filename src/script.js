@@ -24,7 +24,9 @@ window.addEventListener('hashchange', function(){
 document.addEventListener('keypress', function(event){
   var link
   if (event.target.className.match(/editable/)) return
-    if (event.shiftKey && event.keyCode == 66 && (link = document.querySelector('.basecamp-link'))) {
+    var link = document.querySelector('.basecamp-link')
+    if (!link || link.style.display === 'none') return
+    if (event.shiftKey && event.keyCode == 66 && )) {
       link.dispatchEvent(new CustomEvent('click', true, true))
     }
 })
