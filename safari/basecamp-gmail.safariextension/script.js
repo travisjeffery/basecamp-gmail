@@ -1,8 +1,9 @@
 window.addEventListener('hashchange', function(){
   var link = document.querySelector('.basecamp-link')
-  if (document.querySelector('span.hP').textContent.match(/Daily Recap/)) {
-    if (!link) return
-      link.style.display = 'none'
+  , title = document.querySelector('span.hP');
+  if (title && title.textContent.match(/Daily Recap/)) {
+    if (!link) return;
+    link.style.display = 'none'
   }
   else {
     var links = document.querySelectorAll('[href^="https://basecamp.com/"]')
@@ -24,6 +25,7 @@ window.addEventListener('hashchange', function(){
 document.addEventListener('keypress', function(event){
   if (event.target.className.match(/editable/)) return;
   var link = document.querySelector('.basecamp-link')
-  if (!link || link.style.display === 'none') return;
-  if (event.shiftKey && event.keyCode == 66) link.dispatchEvent(new CustomEvent('click', true, true))
+  if (!link || link.style.display === 'none') return
+  if (event.shiftKey && event.keyCode == 66)
+    safari.self.tab.dispatchMessage('visitBasecampDiscussion', link.href)
 })

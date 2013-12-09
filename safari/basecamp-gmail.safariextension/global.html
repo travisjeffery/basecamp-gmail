@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>basecamp helper for gmail</title>
+  <script type="text/javascript">
+    safari.application.addEventListener('message', function(event){
+      debugger
+      if (event.name !== 'visitBasecampDiscussion') return;
+      var i = safari.application.activeBrowserWindow.tabs.indexOf(safari.application.activeBrowserWindow.activeTab)
+      , newTab = safari.application.activeBrowserWindow.openTab('foreground', i + 1)
+      newTab.url = event.message
+    }, false)
+  </script>
+</head>
+<body>
+</body>
+</html>
