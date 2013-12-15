@@ -7,3 +7,7 @@ build:
 		base.js \
 		chrome/src/chrome.js \
 		> chrome/src/script.js
+	@cat \
+		base.css > chrome/src/style.css
+	@cat \
+		base.css > safari/basecamp-gmail.safariextension//style.css
