@@ -12,7 +12,7 @@
         link.className = 'basecamp-link T-I J-J5-Ji lS T-I-ax7 ar7'
         link.target = '_blank'
         link.href = href
-        link.appendChild(document.createTextNode('Visit this on Basecamp'))
+        link.innerHTML = 'Visit this on Basecamp <img src="https://basecamp.com/assets/products/basecamp-a448afb67290235f35b3ec31303b2b27.png" />'
         document.querySelector('.iH > div').appendChild(link)
       }
       link.style.display = ''
@@ -20,6 +20,6 @@
     }
   }
 
-  window.addEventListener('hashchange', createOrUpdateLink)  
-  window.addEventListener('DOMFocusIn', createOrUpdateLink)  
+  window.addEventListener('hashchange', createOrUpdateLink)
+  window.addEventListener('DOMFocusIn', createOrUpdateLink)
 }()
