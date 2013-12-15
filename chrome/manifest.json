@@ -5,6 +5,7 @@
   , "icons": {
     "48": "icons/icon48.png"
   }
+  , "web_accessible_resources": ["icons/icon48.png"]
   , "description": "Adds links to Basecamp discussions, and shortcuts your Gmail interface."
   , "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
   , "content_scripts": [

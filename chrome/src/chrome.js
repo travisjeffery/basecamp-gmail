@@ -1,3 +1,5 @@
+var imgURL = chrome.extension.getURL('icons/icon48.png')
+
 document.addEventListener('keypress', function(event){
   if (event.target.className.match(/editable/)) return;
   var link = document.querySelector('.basecamp-link')

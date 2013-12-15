@@ -1,3 +1,5 @@
+var imgURL = safari.extension.baseURI + 'icons/icon48.png'
+
 document.addEventListener('keypress', function(event){
   if (event.target.className.match(/editable/)) return;
   var link = document.querySelector('.basecamp-link')
